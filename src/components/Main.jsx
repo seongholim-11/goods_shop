@@ -15,7 +15,7 @@ const Main = () => {
             .get(url)
             .then((res) => {
                 console.log(res);
-                const products = res.data.products;
+                const products = res.data.product;
                 setProduct(products);
             })
             .catch((err) => {
