@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid #ccc;
+    background: rgba(255, 255, 255, 0.6);
+    .container {
+        width: 1440px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        .logo {
+            width: 150px;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+}

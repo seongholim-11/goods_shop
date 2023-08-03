@@ -1,0 +1,21 @@
+.nav {
+    width: 1440px;
+    margin: 0 auto;
+    .listWrap {
+        display: flex;
+        list-style: none;
+        justify-content: center;
+        .list a{
+            margin: 0 20px;
+            color: #222; text-decoration: none;
+            transition: 0.5s;
+            font-size: 24px;
+
+            &:hover{
+                color: yellowgreen;
+                font-weight: bold;
+
+            }
+        }
+    }
+}
