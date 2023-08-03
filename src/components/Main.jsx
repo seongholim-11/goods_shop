@@ -10,7 +10,7 @@ const Main = () => {
     const [products, setProduct] = useState([]);
     useEffect(() => {
         let url =
-            "https://f6aabb72-5817-4e4f-aec3-b58c788bde8b.mock.pstmn.io/products";
+            "http://127.0.0.1:8080/products";
         axios
             .get(url)
             .then((res) => {
