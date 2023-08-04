@@ -254,9 +254,9 @@ $desktop-min: 1440px;
     }
     .p-list {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
       .product-link {
-        flex-basis: 30%;
+        flex-basis: 33%;
         color: black;
         text-decoration: none;
         .product-card {

@@ -6,20 +6,21 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .upload-img {
+        
+        .upload-img-placeholder .upload-img{
             width: 300px;
             height: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            display: block;
             border: 1px solid #000;
+            object-fit: cover;
+            cursor: pointer;
             .icon-camera {
                 width: 50px;
             }
             span {
                 font-style: 14px;
                 color: #000;
+                
             }
         }
     }
