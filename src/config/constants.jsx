@@ -1,1 +1,1 @@
-export const API_URL = "https://port-0-goods-shop-server-3prof2lll0aor4f.sel4.cloudtype.app"
+export const API_URL=process.env.NODE_ENV === 'production'? "https://port-0-goods-shop-server-3prof2lll0aor4f.sel4.cloudtype.app" :"http://localhost:8080";
