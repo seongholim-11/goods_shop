@@ -5,14 +5,13 @@ import MainSlider from "./MainSlider";
 import Mdpick from "./Mdpick";
 import Magazine from "./Magazine";
 import { Link } from "react-router-dom";
-import {API_URL} from "../config/constants"
+import { API_URL } from "../config/constants";
 
 const Main = () => {
     const [products, setProduct] = useState([]);
     useEffect(() => {
-        let url =
-            `${API_URL}/products`;
-            axios
+        let url = `${API_URL}/products`;
+        axios
             .get(url)
             .then((res) => {
                 console.log(res);
@@ -22,8 +21,8 @@ const Main = () => {
             .catch((err) => {
                 console.log(err);
             });
-        }, []);
-        console.log("🚀 ~ file: Main.jsx:12 ~ Main ~ products:", products)
+    }, []);
+    console.log("🚀 ~ file: Main.jsx:12 ~ Main ~ products:", products);
 
     return (
         <div>
@@ -40,8 +39,12 @@ const Main = () => {
                 <h2>Products</h2>
                 <div className="product-list p-list">
                     {products.map((product) => (
-                        <Link to={`/productpage/${product.id}`} className="product-link">
-                            <div className="product-card" key={product.id}>
+                        <div className="product-card" key={product.id}>
+                            {product.soldout === 1 ? <div className="product-blur"></div> : null}
+                            <Link
+                                to={`/productpage/${product.id}`}
+                                className="product-link"
+                            >
                                 <div>
                                     <img
                                         src={`${API_URL}/${product.imageUrl}`}
@@ -51,7 +54,7 @@ const Main = () => {
                                 </div>
                                 <div className="product-contents">
                                     <span className="product-name">
-                                    {product.name}
+                                        {product.name}
                                     </span>
                                     <span className="product-price">
                                         {product.price}원
@@ -61,8 +64,8 @@ const Main = () => {
                                         <span>{product.seller}</span>
                                     </span>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>

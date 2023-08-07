@@ -11,12 +11,24 @@
 
 .product-wrap{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-content: center;
+    position: relative;
 }
-
+.product-blur{
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div{
+        font-size: 100px;
+    }
+}
 .image-box {
-    height: 300px;
+    width: 500px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,20 +37,11 @@
         height: 100%;
     }
 }
-.profile-box {
-    padding: 16px;
-    margin-top: 8px;
-    border-bottom: 1px solid #000;
-    display: flex;
-    align-items: center;
-    font-size: 100px;
-    .product-avatar {
-        margin: 0 auto;
-    }
-}
 
 .contents-box {
+    margin-left: 50px;
     display: flex;
+    width: 400px;
     flex-direction: column;
     align-items: start;
     border: 1px solid black;
@@ -62,4 +65,9 @@
         font-style: 12px;
         color: rgba(0, 0, 0, 0.8);
     }
+    div{
+        width: 100%;
+        .ant-btn-default{
+        width: 100%;
+    }}
 }
