@@ -9,6 +9,8 @@ const ProductPage = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState(null);
+    const [productReload, setProductReload] = useState(false);
+
     const getProduct = () => {
         axios
             .get(`${API_URL}/products/${id}`)
@@ -22,7 +24,8 @@ const ProductPage = () => {
 
     useEffect(() => {
         getProduct();
-    }, []);
+        setProductReload(false);
+    }, [productReload]);
 
     if (product === null) {
         return <h2>상품 정보를 받고 있습니다....</h2>;
@@ -33,6 +36,7 @@ const ProductPage = () => {
             .post(`${API_URL}/purchase/${id}`)
             .then((result) => {
                 message.info("결제가 완료되었습니다.");
+                setProductReload(true);
             })
             .catch((err) => {
                 console.error(err);
